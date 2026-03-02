@@ -1,0 +1,19 @@
+meta {
+  name: Get Errors
+  type: http
+  seq: 4
+}
+
+get {
+  url: http://localhost:8080/miner/get-errors
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+settings {
+  encodeUrl: true
+}

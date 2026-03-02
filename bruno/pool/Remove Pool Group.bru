@@ -1,0 +1,26 @@
+meta {
+  name: Remove Pool Group
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/pool/remove-pool-group
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+body:json {
+  {
+    "saveAction": "SAVE_ACTION_SAVE_AND_APPLY",
+    "uid": "group-1"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

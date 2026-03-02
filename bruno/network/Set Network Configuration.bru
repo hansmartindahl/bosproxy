@@ -1,0 +1,32 @@
+meta {
+  name: Set Network Configuration
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/network/set-network-configuration
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+body:json {
+  {
+    "useDhcp": false,
+    "staticConfig": {
+      "address": "192.168.1.100",
+      "netmask": "255.255.255.0",
+      "gateway": "192.168.1.1",
+      "dnsServers": ["8.8.8.8", "8.8.4.4"]
+    },
+    "hostname": "miner"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

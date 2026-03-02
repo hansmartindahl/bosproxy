@@ -1,0 +1,36 @@
+meta {
+  name: Set Cooling Mode
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8080/cooling/set-cooling-mode
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+body:json {
+  {
+    "saveAction": "SAVE_ACTION_SAVE_AND_APPLY",
+    "auto": {
+      "targetTemperature": 60.0,
+      "hotTemperature": 70.0,
+      "dangerousTemperature": 80.0,
+      "minFanSpeed": 0,
+      "maxFanSpeed": 100,
+      "minimumRequiredFans": 1
+    },
+    "manual": null,
+    "immersion": null,
+    "hydro": null
+  }
+}
+
+settings {
+  encodeUrl: true
+}

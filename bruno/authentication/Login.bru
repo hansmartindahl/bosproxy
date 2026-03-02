@@ -1,0 +1,28 @@
+meta {
+  name: Login
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/authentication/login
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "username": "root",
+    "password": "root"
+  }
+}
+
+script:post-response {
+  let response = res.getBody();
+  bru.setVar("AUTHORIZATION", response.token);
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

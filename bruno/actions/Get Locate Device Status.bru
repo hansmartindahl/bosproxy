@@ -1,0 +1,19 @@
+meta {
+  name: Get Locate Device Status
+  type: http
+  seq: 8
+}
+
+get {
+  url: http://localhost:8080/actions/get-locate-device-status
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+settings {
+  encodeUrl: true
+}

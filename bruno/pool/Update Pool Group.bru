@@ -1,0 +1,32 @@
+meta {
+  name: Update Pool Group
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8080/pool/update-pool-group
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+body:json {
+  {
+    "saveAction": "SAVE_ACTION_SAVE_AND_APPLY",
+    "group": {
+      "uid": "group-1",
+      "name": "Primary Updated",
+      "quota": 100,
+      "fixedShareRatio": 1.0,
+      "pools": []
+    }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Set Performance Mode
+  type: http
+  seq: 12
+}
+
+post {
+  url: http://localhost:8080/performance/set-performance-mode
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+body:json {
+  {
+    "saveAction": "SAVE_ACTION_SAVE_AND_APPLY",
+    "mode": "PERFORMANCE_MODE_MANUAL"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

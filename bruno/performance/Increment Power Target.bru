@@ -1,0 +1,26 @@
+meta {
+  name: Increment Power Target
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/performance/increment-power-target
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+body:json {
+  {
+    "saveAction": "SAVE_ACTION_SAVE_AND_APPLY",
+    "powerTargetWatt": 100
+  }
+}
+
+settings {
+  encodeUrl: true
+}

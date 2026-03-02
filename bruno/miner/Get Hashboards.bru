@@ -1,0 +1,19 @@
+meta {
+  name: Get Hashboards
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://localhost:8080/miner/get-hashboards
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+settings {
+  encodeUrl: true
+}

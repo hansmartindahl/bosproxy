@@ -1,0 +1,26 @@
+meta {
+  name: Set Power Target
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/performance/set-power-target
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+body:json {
+  {
+    "saveAction": "SAVE_ACTION_SAVE_AND_APPLY",
+    "powerTargetWatt": 3000
+  }
+}
+
+settings {
+  encodeUrl: true
+}

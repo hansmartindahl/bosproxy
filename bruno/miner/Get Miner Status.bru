@@ -1,0 +1,19 @@
+meta {
+  name: Get Miner Status
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8080/miner/get-miner-status
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+settings {
+  encodeUrl: true
+}

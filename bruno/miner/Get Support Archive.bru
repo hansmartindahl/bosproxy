@@ -1,0 +1,19 @@
+meta {
+  name: Get Support Archive
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8080/miner/get-support-archive?format=SUPPORT_ARCHIVE_FORMAT_ZIP
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,19 @@
+meta {
+  name: List Target Profiles
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:8080/performance/list-target-profiles
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,42 @@
+meta {
+  name: Set Pool Groups
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8080/pool/set-pool-groups
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+body:json {
+  {
+    "saveAction": "SAVE_ACTION_SAVE_AND_APPLY",
+    "poolGroups": [
+      {
+        "uid": "group-1",
+        "name": "Primary",
+        "quota": 100,
+        "fixedShareRatio": 1.0,
+        "pools": [
+          {
+            "uid": "pool-1",
+            "url": "stratum+tcp://pool.example.com:3333",
+            "user": "user",
+            "password": "password",
+            "enabled": true
+          }
+        ]
+      }
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

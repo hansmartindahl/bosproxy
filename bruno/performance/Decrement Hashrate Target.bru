@@ -1,0 +1,26 @@
+meta {
+  name: Decrement Hashrate Target
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:8080/performance/decrement-hashrate-target
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+body:json {
+  {
+    "saveAction": "SAVE_ACTION_SAVE_AND_APPLY",
+    "hashrateTargetThs": 1.0
+  }
+}
+
+settings {
+  encodeUrl: true
+}

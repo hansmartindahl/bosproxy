@@ -1,0 +1,19 @@
+meta {
+  name: Resume Mining
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8080/actions/resume-mining
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+settings {
+  encodeUrl: true
+}

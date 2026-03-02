@@ -1,0 +1,19 @@
+meta {
+  name: Remove Tuned Profiles
+  type: http
+  seq: 14
+}
+
+post {
+  url: http://localhost:8080/performance/remove-tuned-profiles
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+settings {
+  encodeUrl: true
+}

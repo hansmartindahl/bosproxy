@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "BOS Proxy",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

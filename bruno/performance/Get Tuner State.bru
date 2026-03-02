@@ -1,0 +1,19 @@
+meta {
+  name: Get Tuner State
+  type: http
+  seq: 1
+}
+
+get {
+  url: http://localhost:8080/performance/get-tuner-state
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: {{AUTHORIZATION}}
+}
+
+settings {
+  encodeUrl: true
+}
