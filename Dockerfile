@@ -1,5 +1,5 @@
 # Build stage
-FROM eclipse-temurin:21-jdk-alpine AS builder
+FROM eclipse-temurin:21-jdk AS builder
 WORKDIR /build
 
 # Copy Maven wrapper and pom
@@ -23,8 +23,8 @@ WORKDIR /app
 RUN addgroup -g 1000 app && adduser -u 1000 -G app -D app
 USER app
 
-COPY --from=builder /build/target/*.jar app.jar
+COPY --from=builder /build/target/*.jar /app/app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
